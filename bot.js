@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy$/;
+      botRegex = /^\drift compatible$/;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -18,10 +18,13 @@ function respond() {
   }
 }
 
+
+//todo: create post image to groupme image server function
+
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool();
+  botResponse = "drift compatible"; // change this to picture variable
 
   options = {
     hostname: 'api.groupme.com',
@@ -32,6 +35,12 @@ function postMessage() {
   body = {
     "bot_id" : botID,
     "text" : botResponse
+    "attachments" : [
+       {
+          "type" : "image",
+          "url"  : "http://i.groupme.com/245x165.gif.b000fb258d0246c0bc175fe0d089029e.large"
+       }
+    ]
   };
 
   console.log('sending ' + botResponse + ' to ' + botID);
