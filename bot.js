@@ -24,7 +24,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = "drift compatible"; // change this to picture variable
+  botResponse = cool(); // change this to picture variable
 
   options = {
     hostname: 'api.groupme.com',
