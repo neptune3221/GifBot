@@ -24,7 +24,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool(); // change this to picture variable
+  botResponse = "drift compatible"; // change this to picture variable
 
   options = {
     hostname: 'api.groupme.com',
@@ -34,7 +34,7 @@ function postMessage() {
 
   body = {
     "bot_id" : botID,
-    "text" : botResponse
+    "text" : botResponse,
     "attachments" : [
        {
           "type" : "image",
