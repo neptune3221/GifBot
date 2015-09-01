@@ -12,7 +12,7 @@ function respond() {
     postMessage();
     this.res.end();
   } else {
-    console.log("don't care" request.text);
+    console.log(/*"don't care"*/ request.text);
     this.res.writeHead(200);
     this.res.end();
   }
