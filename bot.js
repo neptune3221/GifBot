@@ -11,6 +11,7 @@ function respond() {
       botRegex4 = /\/[Ii] don't give a fuck/;
       botRegex5 = /\/deal with it/;
       botRegex6 = /\/my nigga/;
+      botRegex7 = /\/deez nuts/;
       message = "";
       link = "";
 
@@ -47,6 +48,12 @@ function respond() {
   } else if(request.text && botRegex6.test(request.text)) {
     message = "my nigga";
     link = "http://i.groupme.com/552x464.jpeg.1e322ce495f24bc3ae65fe3dc9dc32d7.large";
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end();
+  } else if(request.text && botRegex7.test(request.text)) {
+    message = "deez nuts";
+    link = "http://i.groupme.com/360x360.gif.ca6f22594e704eb28497bb284c8f4bab.large"
     this.res.writeHead(200);
     postMessage(message, link);
     this.res.end();
