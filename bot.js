@@ -14,7 +14,7 @@ function respond() {
       message = "";
       link = "";
 
-  if(request.text && botRegex.test(request.text)) {
+  if(request.text && botRegex1.test(request.text)) {
     message = "drift compatible";
     link = "http://i.groupme.com/245x165.gif.b000fb258d0246c0bc175fe0d089029e.large"
     this.res.writeHead(200);
