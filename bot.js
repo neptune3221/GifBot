@@ -12,6 +12,11 @@ function respond() {
       botRegex5 = /\/deal with it/;
       botRegex6 = /\/my nigga/;
       botRegex7 = /\/deez nuts/;
+      botRegex8 = /\/[mM]elina laugh/;
+      botRegex9 = /\/swerve/;
+      botRegex10 = /\/awkward/;
+      botRegex11 = /\/damn/;
+      botRegex12 = /\/bae/;
       message = "";
       link = "";
 
@@ -54,6 +59,36 @@ function respond() {
   } else if(request.text && botRegex7.test(request.text)) {
     message = "deez nuts";
     link = "http://i.groupme.com/360x360.gif.ca6f22594e704eb28497bb284c8f4bab.large"
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end();
+  } else if(request.text && botRegex8.test(request.text)) {
+    message = "Melina laugh";
+    link = "http://i.groupme.com/248x359.gif.2ba0377e53e14caeb4294ca29968a0d5.large"
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end();
+  } else if(request.text && botRegex9.test(request.text)) {
+    message = "swerve";
+    link = "http://i.groupme.com/500x212.gif.0ed5276f3a7642db89152aee00986560.large"
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end();
+  } else if(request.text && botRegex10.test(request.text)) {
+    message = "awkward";
+    link = "http://i.groupme.com/300x181.gif.865e5cfdde6840dd869ca64c6f35f82f.large"
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end();
+  } else if(request.text && botRegex11.test(request.text)) {
+    message = "damn";
+    link = "http://i.groupme.com/320x171.gif.f4f016e5d743438ca2592f1cf237e2b6.large"
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end();
+  } else if(request.text && botRegex12.test(request.text)) {
+    message = "bae";
+    link = "http://i.groupme.com/384x288.gif.0f612ffdcc94478a878dc20586c3b7aa.large"
     this.res.writeHead(200);
     postMessage(message, link);
     this.res.end();
