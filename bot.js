@@ -63,7 +63,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = message; // change this to picture variable
+  botResponse = ""; // change this to picture variable
 
   options = {
     hostname: 'api.groupme.com',
