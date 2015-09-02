@@ -7,10 +7,10 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex1 = /\/drift compatible/;
       botRegex2 = /\/bitch please/;
-      botRegex3 = /\whatever/;
-      botRegex4 = /\I don't give a fuck/;
-      botRegex5 = /\deal with it/;
-      botRegex6 = /\my nigga/;
+      botRegex3 = /\/whatever/;
+      botRegex4 = /\/I don't give a fuck/;
+      botRegex5 = /\/deal with it/;
+      botRegex6 = /\/my nigga/;
       message = "";
       link = "";
 
