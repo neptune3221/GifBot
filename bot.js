@@ -11,8 +11,8 @@ function respond() {
       botRegex4 = /\I don't give a fuck/;
       botRegex5 = /\deal with it/;
       botRegex6 = /\my nigga/;
-      message;
-      link;
+      message = "";
+      link = "";
 
   if(request.text && botRegex.test(request.text)) {
     message = "drift compatible";
