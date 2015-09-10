@@ -29,5 +29,5 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("Hey, I'm Cool Guy.");
+  this.res.end("Current commands are '/drift compatible', '/bitch please', '/whatever', '/i don't give a fuck', '/deal with it', '/deez nuts', '/melina laugh', '/swerve', '/awkward', '/damn', '/bae', '/john', '/gfy', '/okay', '/facepalm', '/bambi', '/haneen', '/courtney', '/megan', '/gaby' ");
 }
