@@ -17,16 +17,28 @@ function respond() {
       botRegex10 = /\/awkward/;
       botRegex11 = /\/damn/;
       botRegex12 = /\/bae/;
-      botRegex13 = /\/john/;
+      botRegex13 = /\/[Jj]ohn/;
       botRegex14 = /\/help/;
       botRegex15 = /\/gfy/;
       botRegex16 = /\/okay/;
       botRegex17 = /\/facepalm/;
       botRegex18 = /\/bambi/;
-      botRegex19 = /\/haneen/;
-      botRegex20 = /\/courtney/;
-      botRegex21 = /\/megan/;
-      botRegex22 = /\/gaby/;
+      botRegex19 = /\/[Hh]aneen/;
+      botRegex20 = /\/[Cc]ourtney/;
+      botRegex21 = /\/[Mm]egan/;
+      botRegex22 = /\/[Gg]aby\b/;
+      botRegex23 = /\/[Cc]had/;
+      botRegex24 = /\/sniped/;
+      botRegex25 = /\/gabyism/;
+      botRegex26 = /\/gimmie/;
+      botRegex27 = /\/[Ii]'ll allow it/;
+      botRegex28 = /\/you know why [Ii]'m here/;
+      botRegex29 = /\/shade/;
+      botRegex30 = /\/stahp/;
+      botRegex31 = /\/shit/;
+      botRegex32 = /\/djkhaled/;
+      botRegex33 = /\/feels/;
+      botRegex34 = /\/[Ss]irius/;
       message = "";
       link = "";
 
@@ -104,13 +116,13 @@ function respond() {
     this.res.end();
   } else if(request.text && botRegex13.test(request.text)) {
     message = "john";
-    link = "http://i.groupme.com/500x278.gif.124ed78157d94bdc8fbbee5e003b3296.large";
+    link = "https://i.groupme.com/432x223.gif.cc4b77bdd3ce4d04b124698e48c7fa95.large";
     this.res.writeHead(200);
     postMessage(message, link);
     this.res.end();
   } else if(request.text && botRegex14.test(request.text)) {
     message = "help";
-    message = "Current commands are '/drift compatible', '/bitch please', '/whatever', '/i don't give a fuck', '/deal with it', '/deez nuts', '/melina laugh', '/swerve', '/awkward', '/damn', '/bae', '/john', '/gfy', '/okay', '/facepalm', '/bambi', '/haneen', '/courtney', '/megan', '/gaby',";
+    message = "Current commands are 'drift compatible', 'bitch please', 'whatever', 'i don't give a fuck', 'deal with it', 'deez nuts', 'melina laugh', 'swerve', 'awkward', 'damn', 'bae', 'john', 'gfy', 'okay', 'facepalm', 'bambi', 'haneen', 'courtney', 'megan', 'gaby', 'chad', 'gabyism', 'sniped','gimmie' ,'I'll allow it','you know why I'm here', 'shade', 'stahp', 'shit', 'djkhaled','feels'";
     this.res.writeHead(200);
     postMessageHelp(message);
     this.res.end();
@@ -161,9 +173,81 @@ function respond() {
     link = "http://i.groupme.com/240x360.gif.8e87ee6586c84d9da6aa6c019426b8c3.large";
     this.res.writeHead(200);
     postMessage(message, link);
+    this.res.end(); 
+  } else if(request.text && botRegex23.test(request.text)) {
+    message = "chad";
+    link = "https://i.groupme.com/256x192.gif.3eee27d338d94867b653df259d679119.large";
+    this.res.writeHead(200);
+    postMessage(message, link);
     this.res.end();  
-  } else {
-    console.log(/*"don't care"*/ request.text);
+  } else if(request.text && botRegex24.test(request.text)) {
+    message = "sniped";
+    link = "https://i.groupme.com/400x203.gif.65ad13fa6e8e4b0cbd59500be149e720.large";
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end(); 
+  } else if(request.text && botRegex25.test(request.text)) {
+    message = "gabyism";
+    link = "https://i.groupme.com/444x250.gif.e1b9ae6ccc9b4b92882df0872e34c7b0.large";
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end(); 
+  } else if(request.text && botRegex26.test(request.text)) {
+    message = "gimmie";
+    link = "https://i.groupme.com/176x172.gif.70375240a63d4bf38664f6741e21a7f6.large";
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end(); 
+  } else if(request.text && botRegex27.test(request.text)) {
+    message = "I'll allow it";
+    link = "https://i.groupme.com/500x243.gif.9ce3cf158f714ffdbdb27fc6b040f626.large";
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end(); 
+  } else if(request.text && botRegex28.test(request.text)) {
+    message = "you know why I'm here";
+    link = "https://i.groupme.com/220x162.gif.59502dde04ac4d9ba043497782527c83.large";
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end(); 
+  } else if(request.text && botRegex29.test(request.text)) {
+    message = "shade";
+    link = "https://i.groupme.com/636x357.gif.6f6bd60e55454fdcae644326b0d2254c.large";
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end(); 
+  } else if(request.text && botRegex30.test(request.text)) {
+    message = "stahp";
+    link = "https://i.groupme.com/350x350.gif.a432063dfe0148d5bc614122fb058fcf.large";
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end(); 
+  } else if(request.text && botRegex31.test(request.text)) {
+    message = "shit";
+    link = "https://i.groupme.com/400x279.gif.88698b4f7d4442ae8733cc23cd85e2f0.large";
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end(); 
+  } else if(request.text && botRegex32.test(request.text)) {
+    message = "djkhaled";
+    link = "https://i.groupme.com/448x432.gif.0347e3b0e8a84286bee4bc2708297f10.large";
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end(); 
+  } else if(request.text && botRegex33.test(request.text)) {
+    message = "feels";
+    link = "https://i.groupme.com/500x282.gif.52d4c0e4a57e4cd8b0aef63e9a85a39e.large";
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end();  
+  } else if(request.text && botRegex34.test(request.text)) {
+    message = "sirius";
+    link = "https://i.groupme.com/400x225.gif.871ac6b753fc4f0886ad5c5b2d58e96b.large";
+    this.res.writeHead(200);
+    postMessage(message, link);
+    this.res.end();
+  }  else {
+    console.log(/*"don't care stuff"*/ request.text);
     this.res.writeHead(200);
     this.res.end();
   }
