@@ -42,7 +42,7 @@ function respond() {
       botRegex35 = /\/[Ss]urprise/;
       botRegex36 = /\/[Ww]hat/;
       botRegex37 = /\/[Ll]/;
-      botRegex37 = /\/[Gg]uard/;
+      botRegex38 = /\/[Gg]uard/;
       message = "";
       link = "";
 
