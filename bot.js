@@ -126,7 +126,7 @@ function respond() {
     this.res.end();
   } else if(request.text && botRegex14.test(request.text)) {
     message = "help";
-    message = "Current commands are 'drift compatible', 'bitch please', 'whatever', 'i don't give a fuck', 'deal with it', 'deez nuts', 'melina laugh', 'swerve', 'awkward', 'damn', 'bae', 'john', 'gfy', 'okay', 'facepalm', 'bambi', 'haneen', 'courtney', 'megan', 'gaby', 'chad', 'gabyism', 'sniped','gimmie' ,'I'll allow it','you know why I'm here', 'shade', 'stahp', 'shit', 'djkhaled','feels'";
+    message = "Current commands are 'drift compatible', 'bitch please', 'whatever', 'i don't give a fuck', 'deal with it', 'deez nuts', 'melina laugh', 'swerve', 'awkward', 'damn', 'bae', 'john', 'gfy', 'okay', 'facepalm', 'bambi', 'haneen', 'courtney', 'megan', 'gaby', 'chad', 'gabyism', 'sniped','gimmie' ,'I'll allow it','you know why I'm here', 'shade', 'stahp', 'shit', 'djkhaled','feels', 'sirius', 'what', 'L', 'Guard'";
     this.res.writeHead(200);
     postMessageHelp(message);
     this.res.end();
