@@ -39,10 +39,11 @@ function respond() {
       botRegex32 = /\/djkhaled/;
       botRegex33 = /\/feels/;
       botRegex34 = /\/[Ss]irius/;
-      botRegex35 = /\/[Ss]urprise/;
-      botRegex36 = /\/[Ww]hat/;
-      botRegex37 = /\/[Ll]/;
-      botRegex38 = /\/[Gg]uard/;
+      botRegex35 = /\/[Gg]iphy/; 
+      botRegex36 = /\/[Ss]urprise/;
+      botRegex37 = /\/[Ww]hat/;
+      botRegex38 = /\/[Ll]/;
+      botRegex39 = /\/[Gg]uard/;
       message = "";
       link = "";
 
@@ -251,24 +252,31 @@ function respond() {
     postMessage(message, link);
     this.res.end();
   } else if(request.text && botRegex35.test(request.text)) {
+    botRegex35 = botRegex35.split("/giphy ");
+    message = botRegex35[1];
+    console.log(message);
+    this.res.writeHead(200);
+    postMessageGiphy(message);
+    this.res.end();  
+  }  else if(request.text && botRegex36.test(request.text)) {
     message = "surprise";
     link = "https://i.groupme.com/318x450.gif.cecdc1a2b5aa4724bf592634d354d4e9.large";
     this.res.writeHead(200);
     postMessage(message, link);
     this.res.end();
-  } else if(request.text && botRegex36.test(request.text)) {
+  } else if(request.text && botRegex37.test(request.text)) {
     message = "what";
     link = "https://i.groupme.com/318x450.gif.cecdc1a2b5aa4724bf592634d354d4e9.large";
     this.res.writeHead(200);
     postMessage(message, link);
     this.res.end();
-  } else if(request.text && botRegex37.test(request.text)) {
+  } else if(request.text && botRegex38.test(request.text)) {
     message = "L";
     link = "https://i.groupme.com/338x200.gif.a883c3af34b24dea83e6831669d46381.large";
     this.res.writeHead(200);
     postMessage(message, link);
     this.res.end();  
-  } else if(request.text && botRegex38.test(request.text)) {
+  } else if(request.text && botRegex39.test(request.text)) {
     message = "Guard";
     link = "https://i.groupme.com/498x278.gif.cc5eec3d70084936ab16c45a94d42799.large";
     this.res.writeHead(200);
@@ -360,4 +368,56 @@ function postMessageHelp() {
   botReq.end(JSON.stringify(body));
 }
 
+function postMessageGiphy() {
+  var botResponse, options, body, botReq;
+
+  botResponse = message; // change this to picture variable
+
+  request = new XMLHttpRequest;
+  request.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=b64134024dd54d1ba81cb69abfeff5ec&q=' +botResponse + '&limit=1&offset=0&rating=R&lang=en', true);
+  
+  request.onload = function() {
+    if (request.status >= 200 && request.status < 400){
+      botResponse = JSON.parse(request.responseText).data.image_url;
+      console.log(botResponse);
+    } else {
+      console.log('reached giphy, but API returned an error');
+     }
+  };
+
+  request.onerror = function() {
+    console.log('connection error');
+  };
+
+  request.send();
+
+  options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+  body = {
+    "bot_id" : botID,
+    "text" : botResponse,
+  };
+
+  console.log('sending ' + message + ' to ' + botID);
+
+  botReq = HTTPS.request(options, function(res) {
+      if(res.statusCode == 202) {
+        //neat
+      } else {
+        console.log('rejecting bad status code ' + res.statusCode);
+      }
+  });
+
+  botReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+  botReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+  botReq.end(JSON.stringify(body));
+}
 exports.respond = respond;
