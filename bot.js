@@ -252,7 +252,7 @@ function respond() {
     postMessage(message, link);
     this.res.end();
   } else if(request.text && botRegex35.test(request.text)) {
-    botRegex35 = botRegex35.text.split("/giphy ");
+    botRegex35 = request.text.split("/giphy ");
     message = botRegex35[1];
     console.log(message);
     this.res.writeHead(200);
