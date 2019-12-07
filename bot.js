@@ -380,13 +380,12 @@ function postMessageGiphy() {
 
   giphyReq = HTTPS.request(options, function(res) {
     console.log('statusCode:', res.statusCode);
-    console.log('headers:', res.headers);
       data = '';
         res.on('data', function(chunk) {
           data += chunk;
         });
         res.on('end', function() {
-          botResponse = JSON.parse(data).url;
+          botResponse = JSON.parse(data);
           console.log(data);
           console.log(botResponse);
         });
