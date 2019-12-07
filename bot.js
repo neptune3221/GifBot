@@ -386,6 +386,8 @@ function postMessageGiphy() {
         });
         res.on('end', function() {
           botResponse = JSON.parse(data).url;
+          console.log(data);
+          console.log(botResponse);
         });
       } else {
         console.log('rejecting bad status code ' + res.statusCode);
