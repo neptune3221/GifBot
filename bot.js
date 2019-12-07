@@ -402,6 +402,7 @@ function postMessageGiphy() {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   giphyReq.end()
+  
 
   //botResponse = giphyReq.end(JSON.parse(data).url)
   
