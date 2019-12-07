@@ -372,24 +372,44 @@ function postMessageGiphy() {
   var botResponse, options, body, botReq;
 
   botResponse = message; // change this to picture variable
+  options = {
+    hostname: 'api.giphy.com'
+    path: '/v1/gifs/search?api_key=b64134024dd54d1ba81cb69abfeff5ec&q=' +botResponse + '&limit=1&offset=0&rating=R&lang=en'
+    method: 'GET'
+  }
 
-  request = new XMLHttpRequest;
-  request.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=b64134024dd54d1ba81cb69abfeff5ec&q=' +botResponse + '&limit=1&offset=0&rating=R&lang=en', true);
+  giphyReq = HTTPS.request(options, function(res) {
+    if(res.statusCode == 202) {
+        //neat
+      } else {
+        console.log('rejecting bad status code ' + res.statusCode);
+      }
+  });
+
+  giphyReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+
+  giphyReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+
+  botResponse = giphyReq.end(JSON.parse(data).url)
   
-  request.onload = function() {
-    if (request.status >= 200 && request.status < 400){
-      botResponse = JSON.parse(request.responseText).data.image_url;
-      console.log(botResponse);
-    } else {
-      console.log('reached giphy, but API returned an error');
-     }
-  };
+  // request.onload = function() {
+  //   if (request.status >= 200 && request.status < 400){
+  //     botResponse = JSON.parse(request.responseText).data.image_url;
+  //     console.log(botResponse);
+  //   } else {
+  //     console.log('reached giphy, but API returned an error');
+  //    }
+  // };
 
-  request.onerror = function() {
-    console.log('connection error');
-  };
+  // request.onerror = function() {
+  //   console.log('connection error');
+  // };
 
-  request.send();
+  // request.send();
 
   options = {
     hostname: 'api.groupme.com',
