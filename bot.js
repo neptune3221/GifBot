@@ -380,7 +380,13 @@ function postMessageGiphy() {
 
   giphyReq = HTTPS.request(options, function(res) {
     if(res.statusCode == 202) {
-        //neat
+      data = '';
+        res.on('data', (chunk) => {
+          data += chunk;
+        });
+        res.on('end', () => {
+          botResponse = JSON.parse(data).url;
+        });
       } else {
         console.log('rejecting bad status code ' + res.statusCode);
       }
@@ -394,7 +400,7 @@ function postMessageGiphy() {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
 
-  botResponse = giphyReq.end(JSON.parse(data).url)
+  //botResponse = giphyReq.end(JSON.parse(data).url)
   
   // request.onload = function() {
   //   if (request.status >= 200 && request.status < 400){
