@@ -379,7 +379,8 @@ function postMessageGiphy() {
   }
 
   giphyReq = HTTPS.request(options, function(res) {
-    if(res.statusCode == 202) {
+    console.log('statusCode:', res.statusCode);
+    console.log('headers:', res.headers);
       data = '';
         res.on('data', function(chunk) {
           data += chunk;
@@ -389,9 +390,7 @@ function postMessageGiphy() {
           console.log(data);
           console.log(botResponse);
         });
-      } else {
-        console.log('rejecting bad status code ' + res.statusCode);
-      }
+    
   });
 
   giphyReq.on('error', function(err) {
