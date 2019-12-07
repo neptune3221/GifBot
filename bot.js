@@ -387,7 +387,8 @@ function postMessageGiphy() {
         res.on('end', function() {
           botResponse = JSON.parse(data);
           console.log(data);
-          console.log(botResponse.data['url']);
+          console.log(botResponse.data[0].url);
+          var imageResponse = botResponse.data[0].url;
         });
     
   });
@@ -426,7 +427,7 @@ function postMessageGiphy() {
 
   body = {
     "bot_id" : botID,
-    "text" : botResponse,
+    "text" : imageResponse,
   };
 
   console.log('sending ' + message + ' to ' + botID);
