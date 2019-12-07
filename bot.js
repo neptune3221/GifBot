@@ -373,9 +373,9 @@ function postMessageGiphy() {
 
   botResponse = message; // change this to picture variable
   options = {
-    hostname: 'api.giphy.com'
-    path: '/v1/gifs/search?api_key=b64134024dd54d1ba81cb69abfeff5ec&q=' +botResponse + '&limit=1&offset=0&rating=R&lang=en'
-    method: 'GET'
+    hostname: 'api.giphy.com',
+    path: '/v1/gifs/search?api_key=b64134024dd54d1ba81cb69abfeff5ec&q=' +botResponse + '&limit=1&offset=0&rating=R&lang=en',
+    method: 'GET',
   }
 
   giphyReq = HTTPS.request(options, function(res) {
