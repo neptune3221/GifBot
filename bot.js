@@ -385,9 +385,9 @@ function postMessageGiphy() {
           data += chunk;
         });
         res.on('end', function() {
-          botResponse = JSON.parse(data).data.url;
+          botResponse = JSON.parse(data);
           console.log(data);
-          console.log(botResponse);
+          console.log(botResponse.data);
         });
     
   });
