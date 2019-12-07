@@ -256,8 +256,7 @@ function respond() {
     message = botRegex35[1];
     console.log(message);
     this.res.writeHead(200);
-    link = postMessageGiphy(message);
-    postMessage(message, link);
+    postMessageGiphy(message);
     this.res.end();  
   }  else if(request.text && botRegex36.test(request.text)) {
     message = "surprise";
@@ -389,7 +388,8 @@ function postMessageGiphy() {
           botResponse = JSON.parse(data);
           console.log(data);
           console.log(botResponse.data[0].url);
-          var imageResponse = botResponse.data[0].url;
+          var link = botResponse.data[0].url;
+          postMessage(message, link);
         });
     
   });
@@ -402,7 +402,7 @@ function postMessageGiphy() {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   giphyReq.end()
-  return imageResponse;
+  
 
   //botResponse = giphyReq.end(JSON.parse(data).url)
   
