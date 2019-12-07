@@ -387,7 +387,7 @@ function postMessageGiphy() {
         res.on('end', function() {
           botResponse = JSON.parse(data);
           console.log(data);
-          console.log(botResponse.data.url);
+          console.log(botResponse.data.['url']);
         });
     
   });
