@@ -381,10 +381,10 @@ function postMessageGiphy() {
   giphyReq = HTTPS.request(options, function(res) {
     if(res.statusCode == 202) {
       data = '';
-        res.on('data', (chunk) => {
+        res.on('data', function(chunk) {
           data += chunk;
         });
-        res.on('end', () => {
+        res.on('end', function() {
           botResponse = JSON.parse(data).url;
         });
       } else {
