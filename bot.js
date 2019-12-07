@@ -389,7 +389,7 @@ function postMessageGiphy() {
           console.log(data);
           console.log(botResponse.data[0].url);
           var link = botResponse.data[0].url;
-          postMessage(message, link);
+          postMessageHelp(link);
         });
     
   });
@@ -402,7 +402,6 @@ function postMessageGiphy() {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   giphyReq.end()
-  
 
   //botResponse = giphyReq.end(JSON.parse(data).url)
   
