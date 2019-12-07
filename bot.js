@@ -39,7 +39,7 @@ function respond() {
       botRegex32 = /\/djkhaled/;
       botRegex33 = /\/feels/;
       botRegex34 = /\/[Ss]irius/;
-      botRegex35 = /\/[Gg]if/; 
+      botRegex35 = /\/[Ss]earch/; 
       botRegex36 = /\/[Ss]urprise/;
       botRegex37 = /\/[Ww]hat/;
       botRegex38 = /\/[Ll]/;
@@ -252,7 +252,7 @@ function respond() {
     postMessage(message, link);
     this.res.end();
   } else if(request.text && botRegex35.test(request.text)) {
-    botRegex35 = request.text.split("/gif ");
+    botRegex35 = request.text.split("/search ");
     message = botRegex35[1];
     console.log(message);
     this.res.writeHead(200);
