@@ -387,8 +387,8 @@ function postMessageGiphy() {
         res.on('end', function() {
           botResponse = JSON.parse(data);
           console.log(data);
-          console.log(botResponse.data[0].url);
-          var link = botResponse.data[0].url;
+          console.log(botResponse.data[0].images.downsized_large.url);
+          var link = botResponse.data[0].images.downsized_large.url;
           if(typeof link !== 'undefined') {
             options = {
               hostname: 'api.groupme.com',
